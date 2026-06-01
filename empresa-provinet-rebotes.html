@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empresa Provinet Rebotes — Blog Educativo de Juguetes y Artículos Deportivos</title>
+  <meta name="description" content="Guías educativas sobre bicicletas de juguete, coches de juguete, balones de fútbol, guantes de béisbol y artículos deportivos. Aprende sobre materiales, tipos y cuidados.">
+  <meta name="keywords" content="coches de juguete, bicicletas niños, balones futbol, guantes beisbol, juguetes deportivos, empresa rebotes, artículos deportivos niños">
+  <meta name="robots" content="index, follow">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+    :root{
+      --bg:#fefefe;--bg2:#f5f0eb;--surface:#fff;--border:#e8ddd0;--border2:#d8cabb;
+      --ink:#120800;--ink2:#2a1800;--ink3:#6a4820;--muted:#a87850;
+      --fire:#e82000;--fire2:#ff4020;--fire-bg:rgba(232,32,0,.07);--fire-bdr:rgba(232,32,0,.22);
+      --amber:#f8a000;--amber2:#ffc020;--amber-bg:rgba(248,160,0,.08);
+      --cobalt:#0048c8;--cobalt2:#2068e8;--cobalt-bg:rgba(0,72,200,.07);
+      --pine:#006830;--pine2:#008840;--pine-bg:rgba(0,104,48,.07);
+      --plum:#600080;--plum2:#8020a8;--plum-bg:rgba(96,0,128,.07);
+      --font-d:'Righteous',sans-serif;
+      --font-b:'DM Sans',sans-serif;
+      --font-m:'Fira Code',monospace;
+      --r:8px;--max:1300px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--bg2)}
+    ::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
+    .container{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    /* TOPBAR */
+    .topbar{background:var(--ink2);color:rgba(255,255,255,.5);font-family:var(--font-m);font-size:10px;letter-spacing:.07em;padding:7px 28px;display:flex;justify-content:space-between;align-items:center}
+    .tb-r{display:flex;gap:20px}
+    .tb-r span{color:rgba(255,255,255,.5);cursor:pointer;transition:color .2s}
+    .tb-r span:hover{color:var(--amber)}
+
+    /* HEADER */
+    header{background:var(--surface);border-bottom:3px solid var(--fire);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(232,32,0,.08)}
+    .hdr{display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:0 28px;height:70px}
+    .logo{display:flex;align-items:center;gap:14px}
+    .logo-ico{width:44px;height:44px;background:linear-gradient(135deg,var(--fire),var(--amber));border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 4px 14px rgba(232,32,0,.3)}
+    .logo-texts{display:flex;flex-direction:column}
+    .logo-name{font-family:var(--font-d);font-size:20px;color:var(--ink);line-height:1.1;letter-spacing:.03em}
+    .logo-name span{color:var(--fire)}
+    .logo-badge{font-family:var(--font-m);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    nav{display:flex;gap:8px}
+    nav span{font-family:var(--font-b);font-size:13px;font-weight:600;color:var(--ink3);cursor:pointer;padding:7px 16px;border-radius:20px;transition:all .2s}
+    nav span:hover,nav span.active{background:var(--fire);color:#fff}
+
+    /* AD */
+    .ad{background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--font-m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;position:relative}
+    .ad::before{content:'PUBLICIDAD';position:absolute;top:6px;left:10px;font-size:8px;color:var(--muted);opacity:.6}
+    .ad-top{height:90px;max-width:728px;margin:20px auto}
+    .ad-side{height:250px}
+    .ad-mid{height:90px;margin:36px 0}
+
+    /* HERO */
+    .hero{background:var(--ink2);position:relative;overflow:hidden;border-bottom:4px solid var(--amber)}
+    .hero-circles{position:absolute;top:-100px;right:-100px;width:700px;height:700px;border:1px solid rgba(248,160,0,.08);border-radius:50%;pointer-events:none}
+    .hero-circles::before{content:'';position:absolute;top:80px;left:80px;right:80px;bottom:80px;border:1px solid rgba(248,160,0,.06);border-radius:50%}
+    .hero-circles::after{content:'';position:absolute;top:160px;left:160px;right:160px;bottom:160px;border:1px solid rgba(248,160,0,.04);border-radius:50%}
+    .hero-glow{position:absolute;left:-100px;bottom:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,32,0,.08) 0%,transparent 65%);pointer-events:none}
+    .hero-inner{display:grid;grid-template-columns:1fr 380px;min-height:500px;position:relative;z-index:1;align-items:center;gap:48px}
+    .hero-left{padding:72px 0}
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;background:rgba(248,160,0,.12);border:1px solid rgba(248,160,0,.3);border-radius:20px;padding:5px 16px;font-family:var(--font-m);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber2);margin-bottom:22px}
+    .hero-h1{font-family:var(--font-d);font-size:clamp(54px,6.5vw,96px);line-height:.9;color:#fff;margin-bottom:22px;letter-spacing:.03em}
+    .hero-h1 .hl{color:var(--amber)}
+    .hero-desc{font-size:15px;color:rgba(255,255,255,.5);line-height:1.85;max-width:500px;margin-bottom:32px}
+    .hero-bubbles{display:flex;flex-wrap:wrap;gap:10px}
+    .hbub{font-family:var(--font-m);font-size:10px;padding:5px 14px;border-radius:20px;border:1px solid}
+    .hb1{background:rgba(232,32,0,.12);border-color:rgba(232,32,0,.3);color:var(--fire2)}
+    .hb2{background:rgba(248,160,0,.12);border-color:rgba(248,160,0,.3);color:var(--amber2)}
+    .hb3{background:rgba(0,72,200,.12);border-color:rgba(0,72,200,.3);color:var(--cobalt2)}
+    .hb4{background:rgba(0,104,48,.12);border-color:rgba(0,104,48,.3);color:var(--pine2)}
+    .hero-right{padding:40px 0;display:flex;align-items:center;justify-content:center}
+    .toy-wheel{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:340px}
+    .tw{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:18px;transition:background .3s,border-color .3s,transform .3s;cursor:default}
+    .tw:hover{background:rgba(255,255,255,.08);border-color:rgba(248,160,0,.3);transform:scale(1.03)}
+    .tw-wide{grid-column:span 2}
+    .tw-ico{font-size:28px;margin-bottom:8px}
+    .tw-lbl{font-family:var(--font-m);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+    .tw1 .tw-lbl{color:var(--fire2)}
+    .tw2 .tw-lbl{color:var(--amber2)}
+    .tw3 .tw-lbl{color:var(--cobalt2)}
+    .tw4 .tw-lbl{color:var(--pine2)}
+    .tw5 .tw-lbl{color:var(--plum2)}
+    .tw-txt{font-size:12px;color:rgba(255,255,255,.45);line-height:1.45}
+
+    /* DISC BAND */
+    .disc-band{background:var(--fire-bg);border-bottom:1px solid var(--fire-bdr);padding:10px 0}
+    .disc-inner{display:flex;align-items:center;gap:10px;font-family:var(--font-m);font-size:10px;color:var(--fire);letter-spacing:.05em;max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    /* MAIN */
+    .main-wrap{padding:60px 0}
+    .main-grid{display:grid;grid-template-columns:1fr 305px;gap:52px}
+
+    /* SECTION HEAD */
+    .sh{margin-bottom:30px}
+    .sh-eyebrow{font-family:var(--font-m);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:6px}
+    .sh-title{font-family:var(--font-d);font-size:48px;color:var(--ink);line-height:1;letter-spacing:.02em}
+    .sh-line{height:4px;background:linear-gradient(90deg,var(--fire),var(--amber),transparent);border-radius:2px;margin-top:10px;margin-bottom:0}
+
+    /* FILTER */
+    .cat-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .cf-btn{font-family:var(--font-m);font-size:9px;letter-spacing:.08em;padding:6px 16px;border-radius:20px;border:1px solid var(--border2);background:var(--surface);color:var(--ink3);cursor:pointer;transition:all .2s}
+    .cf-btn:hover,.cf-btn.on{background:var(--fire);color:#fff;border-color:var(--fire)}
+
+    /* PRODUCT GRID */
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:52px}
+    .pcard{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:box-shadow .25s,transform .25s,border-color .25s;cursor:default}
+    .pcard:hover{box-shadow:0 8px 30px rgba(232,32,0,.12);transform:translateY(-4px);border-color:var(--fire)}
+    .pc-img{height:118px;display:flex;align-items:center;justify-content:center;font-size:50px;position:relative}
+    .pc-corner{position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:28px 28px 0 0}
+    .c-bici .pc-img{background:linear-gradient(145deg,#fff8f5,#ffe8e0)}
+    .c-bici .pc-corner{border-color:var(--fire) transparent transparent transparent}
+    .c-coche .pc-img{background:linear-gradient(145deg,#f5f8ff,#e0e8ff)}
+    .c-coche .pc-corner{border-color:var(--cobalt) transparent transparent transparent}
+    .c-balon .pc-img{background:linear-gradient(145deg,#f5fff8,#e0ffe8)}
+    .c-balon .pc-corner{border-color:var(--pine) transparent transparent transparent}
+    .c-guante .pc-img{background:linear-gradient(145deg,#faf5ff,#eee0ff)}
+    .c-guante .pc-corner{border-color:var(--plum) transparent transparent transparent}
+    .c-juguete .pc-img{background:linear-gradient(145deg,#fffaf5,#fff0e0)}
+    .c-juguete .pc-corner{border-color:var(--amber) transparent transparent transparent}
+    .pc-body{padding:14px 16px}
+    .pc-cat{font-family:var(--font-m);font-size:8px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}
+    .cat-bici{color:var(--fire)}
+    .cat-coche{color:var(--cobalt)}
+    .cat-balon{color:var(--pine)}
+    .cat-guante{color:var(--plum)}
+    .cat-juguete{color:var(--amber)}
+    .pc-title{font-family:var(--font-d);font-size:18px;color:var(--ink);line-height:1.2;margin-bottom:7px;letter-spacing:.02em}
+    .pc-desc{font-size:13px;color:var(--ink3);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .pc-footer{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:11px;border-top:1px solid var(--border);font-family:var(--font-m);font-size:9px;color:var(--muted)}
+
+    /* FULL ARTICLE */
+    .full-art{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:52px}
+    .fa-banner{height:250px;display:flex;align-items:center;justify-content:center;font-size:90px;position:relative;background:linear-gradient(145deg,var(--ink2),#3a1000)}
+    .fa-banner-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border:1px solid rgba(248,160,0,.08);border-radius:50%}
+    .fa-banner-rings::before{content:'';position:absolute;top:40px;left:40px;right:40px;bottom:40px;border:1px solid rgba(248,160,0,.06);border-radius:50%}
+    .fa-overlay{position:absolute;inset:0;background:linear-gradient(to top,var(--surface) 0%,transparent 55%)}
+    .fa-body{padding:32px 40px}
+    .fa-badges{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+    .badge{font-family:var(--font-m);font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+    .badge-fire{background:var(--fire-bg);border:1px solid var(--fire-bdr);color:var(--fire)}
+    .badge-edu{border:1px solid var(--border2);color:var(--ink3)}
+    .fa-h1{font-family:var(--font-d);font-size:clamp(28px,4vw,52px);color:var(--ink);line-height:1.02;margin-bottom:14px;letter-spacing:.02em}
+    .fa-byline{display:flex;gap:16px;font-family:var(--font-m);font-size:10px;color:var(--muted);margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+    .fa-text h2{font-family:var(--font-d);font-size:30px;color:var(--ink);margin:30px 0 12px;letter-spacing:.02em}
+    .fa-text h3{font-family:var(--font-m);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--fire);margin:22px 0 9px}
+    .fa-text p{color:var(--ink3);margin-bottom:15px;font-size:15px;line-height:1.85}
+    .fa-text p strong{color:var(--ink)}
+    .callout{background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:24px 0}
+    .callout-lbl{font-family:var(--font-m);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+    .callout p{color:var(--ink);margin:0;font-size:15px}
+    .info-box{background:var(--cobalt-bg);border:1px solid rgba(0,72,200,.18);border-radius:var(--r);padding:16px 20px;margin:22px 0}
+    .info-box-lbl{font-family:var(--font-m);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt2);margin-bottom:8px}
+    .info-box p{color:var(--ink2);margin:0;font-size:14px;line-height:1.7}
+    .warn-box{background:var(--fire-bg);border-left:3px solid var(--fire);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:22px 0}
+    .warn-lbl{font-family:var(--font-m);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--fire);margin-bottom:7px}
+    .warn-box p{color:var(--ink2);margin:0;font-size:14px}
+    .info-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14px}
+    .info-table th{background:var(--ink2);color:var(--amber);font-family:var(--font-d);font-size:14px;padding:11px 14px;text-align:left;letter-spacing:.02em}
+    .info-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--ink3)}
+    .info-table tr:hover td{background:var(--bg2)}
+
+    /* ARTICLE LIST */
+    .alist{display:flex;flex-direction:column}
+    .aitem{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start;padding:22px 0;border-bottom:1px solid var(--border)}
+    .aitem:last-child{border-bottom:none}
+    .anum{font-family:var(--font-d);font-size:52px;color:var(--border2);line-height:1;text-align:right;padding-top:2px;transition:color .2s}
+    .aitem:hover .anum{color:var(--fire)}
+    .ai-cat{font-family:var(--font-m);font-size:8px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}
+    .ai-title{font-family:var(--font-d);font-size:21px;color:var(--ink);line-height:1.2;margin-bottom:7px;letter-spacing:.02em}
+    .ai-desc{font-size:13px;color:var(--ink3);line-height:1.65}
+    .ai-meta{margin-top:8px;font-family:var(--font-m);font-size:10px;color:var(--muted);display:flex;gap:10px}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:24px}
+    .widget{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden}
+    .w-head{padding:13px 18px;font-family:var(--font-d);font-size:20px;letter-spacing:.03em}
+    .wh-fire{background:var(--fire);color:#fff}
+    .wh-amber{background:var(--amber);color:var(--ink)}
+    .wh-dark{background:var(--ink2);color:#fff}
+    .w-body{padding:14px 18px}
+    .cat-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+    .cat-row:last-child{border-bottom:none}
+    .cat-row span.cat-lnk{color:var(--ink2);font-weight:500;cursor:default}
+    .cat-badge{font-family:var(--font-m);font-size:10px;background:var(--bg2);color:var(--muted);padding:2px 8px;border-radius:20px}
+    .tip-w{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);padding:20px}
+    .tip-lbl{font-family:var(--font-m);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:10px}
+    .tip-txt{font-family:var(--font-d);font-size:16px;color:var(--ink);line-height:1.6;letter-spacing:.01em}
+    .tip-by{margin-top:10px;font-family:var(--font-m);font-size:9px;color:var(--muted)}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
+    .tag{font-family:var(--font-m);font-size:9px;letter-spacing:.05em;color:var(--ink3);background:var(--bg2);border:1px solid var(--border);padding:4px 9px;border-radius:20px;cursor:default;transition:all .2s}
+    .tag:hover{background:var(--fire);color:#fff;border-color:var(--fire)}
+
+    /* KNOW STRIP */
+    .know{background:linear-gradient(135deg,var(--fire),var(--amber));padding:52px 0}
+    .know-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .kstat{text-align:center;padding:28px 20px;border-right:1px solid rgba(255,255,255,.2)}
+    .kstat:last-child{border-right:none}
+    .knum{font-family:var(--font-d);font-size:62px;color:#fff;line-height:1;margin-bottom:6px;letter-spacing:.03em}
+    .klbl{font-family:var(--font-m);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+    .kdesc{font-size:13px;color:rgba(255,255,255,.65);margin-top:7px;line-height:1.5}
+
+    /* ABOUT */
+    .about{background:var(--bg2);padding:72px 0;border-top:1px solid var(--border)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .a-label{font-family:var(--font-m);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:12px}
+    .a-h2{font-family:var(--font-d);font-size:50px;color:var(--ink);line-height:.92;margin-bottom:20px;letter-spacing:.02em}
+    .a-h2 em{color:var(--fire);font-style:normal}
+    .a-p{font-size:15px;color:var(--ink3);margin-bottom:13px;line-height:1.85}
+    .disc-box{background:var(--surface);border:1.5px solid var(--border);border-top:3px solid var(--amber);border-radius:0 0 var(--r) var(--r);padding:16px 18px;margin-top:18px}
+    .disc-box p{font-family:var(--font-m);font-size:11px;color:var(--ink3);margin:0;line-height:1.72}
+    .values{display:flex;flex-direction:column;gap:18px}
+    .val{display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r)}
+    .val-ico{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .vi1{background:var(--fire-bg)} .vi2{background:var(--cobalt-bg)} .vi3{background:var(--pine-bg)} .vi4{background:var(--amber-bg)}
+    .val-t{font-family:var(--font-d);font-size:16px;color:var(--ink);margin-bottom:3px;letter-spacing:.02em}
+    .val-d{font-size:13px;color:var(--ink3);line-height:1.6}
+
+    /* FOOTER */
+    footer{background:var(--ink2);border-top:4px solid var(--fire)}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:50px 0 28px}
+    .f-brand{font-family:var(--font-d);font-size:20px;color:#fff;margin-bottom:10px;letter-spacing:.03em}
+    .f-brand span{color:var(--amber)}
+    .f-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.75}
+    .f-col-title{font-family:var(--font-m);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px}
+    .f-links{display:flex;flex-direction:column;gap:9px}
+    .f-links span{font-size:13px;color:rgba(255,255,255,.32);cursor:default}
+    .f-bottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-m);font-size:9px;color:rgba(255,255,255,.25)}
+    .f-legal{display:flex;gap:18px}
+    .f-legal span{color:rgba(255,255,255,.25);cursor:pointer}
+    .f-legal span:hover{color:var(--amber)}
+
+    /* MODALS */
+    .m-ov{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px}
+    .m-ov.open{display:flex}
+    .modal{background:var(--surface);border-radius:var(--r);max-width:760px;width:100%;max-height:85vh;overflow-y:auto;border:1.5px solid var(--border)}
+    .modal-hd{position:sticky;top:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .modal-hd-t{font-family:var(--font-d);font-size:24px;color:var(--ink);letter-spacing:.02em}
+    .modal-x{background:none;border:1px solid var(--border);color:var(--ink3);width:34px;height:34px;border-radius:var(--r);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+    .modal-x:hover{border-color:var(--fire);color:var(--fire)}
+    .modal-bd{padding:28px 24px}
+    .modal-bd h3{font-family:var(--font-m);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fire);margin:22px 0 9px}
+    .modal-bd h3:first-child{margin-top:0}
+    .modal-bd p{font-size:14px;color:var(--ink3);margin-bottom:12px;line-height:1.75}
+    .modal-bd ul{padding-left:20px;margin-bottom:12px}
+    .modal-bd ul li{font-size:14px;color:var(--ink3);margin-bottom:5px;line-height:1.7}
+
+    /* COOKIE */
+    .cookie{position:fixed;bottom:0;left:0;right:0;background:var(--ink2);border-top:3px solid var(--fire);padding:16px 24px;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cookie-txt{font-size:13px;color:rgba(255,255,255,.5);flex:1;line-height:1.6}
+    .cookie-txt span.priv-lnk{color:var(--amber2);text-decoration:underline;cursor:pointer}
+    .c-btns{display:flex;gap:10px;flex-shrink:0}
+    .btn-ca{background:var(--fire);color:#fff;font-family:var(--font-m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:20px;padding:8px 18px;cursor:pointer;font-weight:600}
+    .btn-cr{background:transparent;color:rgba(255,255,255,.4);font-family:var(--font-m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:8px 18px;cursor:pointer}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .au{animation:fadeUp .6s ease both}
+    .d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+
+    @media(max-width:1024px){.main-grid{grid-template-columns:1fr}.sidebar{display:none}.hero-inner{grid-template-columns:1fr}.hero-right{display:none}.know-grid{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.tb-r{display:none}.pgrid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}nav{gap:4px}}
+    @media(max-width:520px){.pgrid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>🏀 Empresa Provinet Rebotes — Blog educativo de juguetes y artículos deportivos · Solo contenido informativo</span>
+  <div class="tb-r">
+    <span onclick="openPriv()">Política de Privacidad</span>
+    <span onclick="goTo('nosotros')">Sobre Nosotros</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-ico">🏀</div>
+      <div class="logo-texts">
+        <div class="logo-name">Empresa Provinet <span>Rebotes</span></div>
+        <div class="logo-badge">Blog Educativo · Juguetes & Artículos Deportivos</div>
+      </div>
+    </div>
+    <nav>
+      <span class="active" onclick="goTo('inicio')">Inicio</span>
+      <span onclick="goTo('catalogo')">Artículos</span>
+      <span onclick="goTo('guias')">Guías</span>
+      <span onclick="goTo('nosotros')">Nosotros</span>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-circles"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left au">
+        <div class="hero-kicker">🏀 Empresa Provinet Rebotes · Blog Educativo</div>
+        <h1 class="hero-h1">JUEGA,<br>APRENDE<br>Y <span class="hl">REBOTA</span></h1>
+        <p class="hero-desc">En <strong>Empresa Provinet Rebotes</strong> encontrarás guías educativas sobre bicicletas de niños, coches de juguete, balones de fútbol, guantes de béisbol y todos los artículos deportivos y de juego. Aprende sobre materiales, componentes y cuidados de cada producto de forma gratuita.</p>
+        <div class="hero-bubbles">
+          <span class="hbub hb1">+17 artículos documentados</span>
+          <span class="hbub hb2">Sin marcas comerciales</span>
+          <span class="hbub hb3">Para toda la familia</span>
+          <span class="hbub hb4">100% educativo</span>
+        </div>
+      </div>
+      <div class="hero-right au d3">
+        <div class="toy-wheel">
+          <div class="tw tw-wide tw1">
+            <div class="tw-ico">🏀</div>
+            <div class="tw-lbl">Empresa de balones</div>
+            <div class="tw-txt">Fútbol, baloncesto, béisbol y más: materiales, presión y tipos</div>
+          </div>
+          <div class="tw tw2">
+            <div class="tw-ico">🚲</div>
+            <div class="tw-lbl">Empresa de bicicletas</div>
+            <div class="tw-txt">Bicicletas infantiles, materiales y tallas</div>
+          </div>
+          <div class="tw tw3">
+            <div class="tw-ico">🚗</div>
+            <div class="tw-lbl">Empresa de coches</div>
+            <div class="tw-txt">Coches de juguete y materiales plásticos</div>
+          </div>
+          <div class="tw tw4">
+            <div class="tw-ico">🥊</div>
+            <div class="tw-lbl">Empresa de guantes</div>
+            <div class="tw-txt">Guantes de béisbol y boxeo explicados</div>
+          </div>
+          <div class="tw tw5">
+            <div class="tw-ico">🎮</div>
+            <div class="tw-lbl">Juguetes y más</div>
+            <div class="tw-txt">Materiales, certificaciones y seguridad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISC BAND -->
+<div class="disc-band">
+  <div class="disc-inner">ℹ️ &nbsp;<strong>Empresa Provinet Rebotes</strong> es un blog exclusivamente educativo. No realizamos ventas ni ofrecemos servicios comerciales de ningún tipo.</div>
+</div>
+
+<!-- AD TOP -->
+<div class="container">
+  <div class="ad ad-top">[ Espacio publicitario — 728×90 ]</div>
+</div>
+
+<!-- MAIN -->
+<div class="container main-wrap" id="catalogo">
+  <div class="main-grid">
+    <main>
+      <div class="sh au">
+        <div class="sh-eyebrow">Guía completa — Empresa Provinet Rebotes</div>
+        <div class="sh-title">Artículos Deportivos y Juguetes</div>
+        <div class="sh-line"></div>
+      </div>
+
+      <div class="cat-filter">
+        <button class="cf-btn on" data-cat="all">Todos</button>
+        <button class="cf-btn" data-cat="bici">Bicicletas</button>
+        <button class="cf-btn" data-cat="coche">Coches de juguete</button>
+        <button class="cf-btn" data-cat="balon">Balones</button>
+        <button class="cf-btn" data-cat="guante">Guantes</button>
+        <button class="cf-btn" data-cat="juguete">Más juguetes</button>
+      </div>
+
+      <div class="pgrid" id="pgrid">
+
+        <!-- BICICLETAS -->
+        <div class="pcard c-bici au d1" data-cat="bici">
+          <div class="pc-img"><div class="pc-corner"></div>🚲</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-bici">Empresa de bicicletas</div>
+            <h3 class="pc-title">Bicicleta infantil: tallas y materiales</h3>
+            <p class="pc-desc">En la empresa de bicicletas de Provinet Rebotes, el tamaño de la rueda determina la talla: 12" para 2–3 años, 14" para 3–5 años, 16" para 4–6 años, 20" para 6–10 años y 24" para 9–13 años. El cuadro puede ser de acero pintado o aluminio. Aprende cómo ajustar el asiento para que el niño toque el suelo con las puntas de los pies.</p>
+            <div class="pc-footer"><span>9 min · May 2025</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-bici au d2" data-cat="bici">
+          <div class="pc-img"><div class="pc-corner"></div>⚙️</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-bici">Empresa de bicicletas</div>
+            <h3 class="pc-title">Ruedines o ruedas de apoyo: cuándo retirarlos</h3>
+            <p class="pc-desc">Los ruedines o ruedas estabilizadoras se usan en bicicletas de 12" a 16" mientras el niño aprende el equilibrio. Se recomienda retirarlos cuando el niño ya mantiene el equilibrio en movimiento, generalmente entre los 4 y 6 años. Aprende por qué muchos expertos recomiendan la bicicleta de balance como alternativa a los ruedines.</p>
+            <div class="pc-footer"><span>7 min · Abr 2025</span></div>
+          </div>
+        </div>
+
+        <!-- COCHES DE JUGUETE -->
+        <div class="pcard c-coche au d3" data-cat="coche">
+          <div class="pc-img"><div class="pc-corner"></div>🚗</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-coche">Empresa de coches de juguete</div>
+            <h3 class="pc-title">Coches de juguete: plásticos y materiales seguros</h3>
+            <p class="pc-desc">En la empresa de coches de juguete de Provinet Rebotes, los plásticos más usados son el ABS (acrilonitrilo butadieno estireno) para carcasas rígidas, el PP (polipropileno) para piezas que requieren flexibilidad y el PVC para neumáticos. Aprende sobre la norma EN 71 que regula la seguridad de los juguetes en la Unión Europea y qué significan los pictogramas de edad.</p>
+            <div class="pc-footer"><span>8 min · Mar 2025</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-coche au d4" data-cat="coche">
+          <div class="pc-img"><div class="pc-corner"></div>🏎️</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-coche">Empresa de coches de juguete</div>
+            <h3 class="pc-title">Coche eléctrico para niños: batería y motor</h3>
+            <p class="pc-desc">Los coches eléctricos de juguete usan baterías de plomo-ácido (6V o 12V) o de iones de litio. El motor eléctrico DC puede ser de 6V (para niños de 1–3 años, velocidad máxima 3 km/h) o de 12V (para 3–7 años, hasta 6 km/h). Aprende sobre el tiempo de carga, los sistemas de frenado y las certificaciones de seguridad eléctrica CE y ASTM.</p>
+            <div class="pc-footer"><span>10 min · Feb 2025</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-coche" data-cat="coche">
+          <div class="pc-img"><div class="pc-corner"></div>🚕</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-coche">Empresa de coches de juguete</div>
+            <h3 class="pc-title">Coches de fricción y a escala: tipos y materiales</h3>
+            <p class="pc-desc">Los coches de fricción almacenan energía en un volante de inercia interno al empujar el vehículo hacia atrás. Los coches a escala (die-cast) se fabrican en zinc fundido a presión (zamak) con acabados de pintura al horno. Aprende sobre las escalas más comunes (1:18, 1:24, 1:64) y por qué los die-cast tienen mayor detalle y peso que los de plástico.</p>
+            <div class="pc-footer"><span>6 min · Ene 2025</span></div>
+          </div>
+        </div>
+
+        <!-- BALONES -->
+        <div class="pcard c-balon" data-cat="balon">
+          <div class="pc-img"><div class="pc-corner"></div>⚽</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-balon">Empresa de balones</div>
+            <h3 class="pc-title">Balón de fútbol para niños: tallas y materiales</h3>
+            <p class="pc-desc">En la empresa de balones de Provinet Rebotes, los balones de fútbol tienen 5 tallas: Talla 1 (habilidad, 3+ años), Talla 3 (7–9 años), Talla 4 (9–14 años) y Talla 5 (el oficial, mayores de 14 años). La cubierta puede ser de PVC (económica) o PU (profesional). Aprende cómo la presión correcta afecta al rebote y al control del balón.</p>
+            <div class="pc-footer"><span>8 min · Dic 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-balon" data-cat="balon">
+          <div class="pc-img"><div class="pc-corner"></div>🏀</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-balon">Empresa de balones</div>
+            <h3 class="pc-title">Balón de baloncesto: tallas y superficies</h3>
+            <p class="pc-desc">En la empresa de balones, el balón de baloncesto talla 5 es para niños de 5 a 8 años, talla 6 para mujeres y jugadores de 9 a 12 años, y talla 7 (oficial NBA) para adultos. La cubierta de cuero genuino es para interiores (parqué); el cuero compuesto y la goma son para exteriores. Aprende sobre el agarre y la textura de canal según el nivel de juego.</p>
+            <div class="pc-footer"><span>7 min · Nov 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-balon" data-cat="balon">
+          <div class="pc-img"><div class="pc-corner"></div>⚾</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-balon">Empresa de balones</div>
+            <h3 class="pc-title">Pelota de béisbol: corcho, caucho y cuero</h3>
+            <p class="pc-desc">Una pelota de béisbol oficial tiene un núcleo de corcho y caucho envuelto en hilaza de lana y nylon, cubierto con cuero de vaca cosido a mano con 108 puntadas de hilo rojo. Pesa entre 141 y 149 gramos. Aprende la diferencia entre pelotas de práctica (goma maciza), de balonear (foam) y las oficiales, y qué significan los costuras en el vuelo de la pelota.</p>
+            <div class="pc-footer"><span>9 min · Oct 2024</span></div>
+          </div>
+        </div>
+
+        <!-- GUANTES -->
+        <div class="pcard c-guante" data-cat="guante">
+          <div class="pc-img"><div class="pc-corner"></div>⚾</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-guante">Empresa de guantes</div>
+            <h3 class="pc-title">Guante de béisbol: cuero, tallas y posiciones</h3>
+            <p class="pc-desc">En la empresa de guantes de béisbol de Provinet Rebotes, los guantes se miden en pulgadas desde la base hasta la punta (10"–11,5" para niños, 11,5"–12,5" para adultos de campo, 12"–13" para primera base). El cuero de piel de vaca es el más común; el cuero de búfalo es más suave pero menos duradero. Aprende sobre el web (red) y qué tipo usar según la posición.</p>
+            <div class="pc-footer"><span>11 min · Sep 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-guante" data-cat="guante">
+          <div class="pc-img"><div class="pc-corner"></div>🥊</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-guante">Empresa de guantes</div>
+            <h3 class="pc-title">Guante de boxeo: relleno, peso y materiales</h3>
+            <p class="pc-desc">En la empresa de guantes deportivos, los guantes de boxeo se miden en onzas (8 oz para sparring ligero, 16 oz para sparring pleno). El relleno puede ser de espuma de látex, gel multicapa o espuma de alta densidad. El exterior puede ser cuero genuino (más duradero) o vinilo (más económico). Aprende sobre el cierre de velcro vs cordón y cómo el peso afecta al entrenamiento.</p>
+            <div class="pc-footer"><span>9 min · Ago 2024</span></div>
+          </div>
+        </div>
+
+        <!-- MÁS JUGUETES -->
+        <div class="pcard c-juguete" data-cat="juguete">
+          <div class="pc-img"><div class="pc-corner"></div>🛹</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-juguete">Juguetes sobre ruedas</div>
+            <h3 class="pc-title">Patineta para niños: deck, ruedas y seguridad</h3>
+            <p class="pc-desc">Las patinetas para niños de 5 a 8 años tienen decks más anchos (7,5"–8") y ruedas más blandas (80A) para mayor estabilidad. El deck es de arce o de plástico compuesto (más resistente a impactos). Aprende sobre el equipo de protección obligatorio (casco, rodilleras, coderas y muñequeras) y qué superficies son más seguras para aprender.</p>
+            <div class="pc-footer"><span>8 min · Jul 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-juguete" data-cat="juguete">
+          <div class="pc-img"><div class="pc-corner"></div>🎯</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-juguete">Juguetes deportivos</div>
+            <h3 class="pc-title">Dardo, arco y tiro al blanco: materiales y seguridad</h3>
+            <p class="pc-desc">Los juegos de tiro al blanco para niños usan dardos de ventosa (PVC con punta de goma) o flechas de foam (espuma de poliuretano). El blanco puede ser de tela, corcho o EVA. Aprende sobre las certificaciones de seguridad para juguetes de tiro (EN 71 Parte 1: propiedades mecánicas) y qué edades son apropiadas para cada tipo según el nivel de impacto.</p>
+            <div class="pc-footer"><span>6 min · Jun 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-coche" data-cat="coche">
+          <div class="pc-img"><div class="pc-corner"></div>🚁</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-coche">Juguetes tecnológicos</div>
+            <h3 class="pc-title">Dron de juguete: motores, hélices y batería</h3>
+            <p class="pc-desc">Los drones de juguete usan 4 motores brushless (sin escobillas) o brushed (con escobillas). Las hélices son de plástico ABS. La batería de LiPo (polímero de litio) de 3,7V proporciona entre 5 y 15 minutos de vuelo. Aprende sobre el sistema de estabilización giroscópica, la protección de hélices (guards) y las regulaciones de vuelo para menores de 250 gramos.</p>
+            <div class="pc-footer"><span>10 min · May 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-balon" data-cat="balon">
+          <div class="pc-img"><div class="pc-corner"></div>🏈</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-balon">Empresa de balones</div>
+            <h3 class="pc-title">Balón de fútbol americano: cuero y costuras</h3>
+            <p class="pc-desc">El balón de fútbol americano tiene forma ovalada (prolate spheroid) y está cosido con 4 paneles de cuero natural. Las 8 costuras blancas facilitan el agarre. Pesa entre 397 y 425 gramos. Aprende sobre los balones de goma para niños (más ligeros y fáciles de atrapar), las diferencias de tamaño por categoría (pee-wee, junior, youth, adulto) y cómo se infla correctamente.</p>
+            <div class="pc-footer"><span>7 min · Abr 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-guante" data-cat="guante">
+          <div class="pc-img"><div class="pc-corner"></div>🏒</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-guante">Empresa de guantes</div>
+            <h3 class="pc-title">Guante de portero de fútbol: látex y corte</h3>
+            <p class="pc-desc">Los guantes de portero tienen palma de látex (el material que determina el agarre). El látex de contacto tiene mayor agarre pero menor durabilidad; el látex negative es más resistente. El corte puede ser flat (plano), roll (enrollado, mayor contacto) o hybrid (combinado). Aprende sobre la costura interna vs externa y cómo el tiempo húmedo mejora el agarre del látex.</p>
+            <div class="pc-footer"><span>8 min · Mar 2024</span></div>
+          </div>
+        </div>
+
+        <div class="pcard c-juguete" data-cat="juguete">
+          <div class="pc-img"><div class="pc-corner"></div>🏋️</div>
+          <div class="pc-body">
+            <div class="pc-cat cat-juguete">Equipamiento deportivo</div>
+            <h3 class="pc-title">Cuerda para saltar: materiales y longitudes</h3>
+            <p class="pc-desc">Las cuerdas de saltar para niños usan cabos de PVC (más duradero y rápido), nylon (más suave) o algodón (el clásico, más lento). Los mangos pueden ser de plástico, madera o foam. La longitud correcta: parado sobre la cuerda, los mangos deben llegar a las axilas. Las cuerdas de velocidad para adultos usan cables de acero o PVC ultrafino para alcanzar hasta 300 saltos por minuto.</p>
+            <div class="pc-footer"><span>5 min · Feb 2024</span></div>
+          </div>
+        </div>
+
+      </div><!-- /pgrid -->
+
+      <!-- MID AD -->
+      <div class="ad ad-mid">[ Espacio publicitario — 728×90 ]</div>
+
+      <!-- FULL ARTICLE -->
+      <div class="sh" id="guias">
+        <div class="sh-eyebrow">Artículo destacado — Empresa Provinet Rebotes</div>
+        <div class="sh-title">Artículo del Mes</div>
+        <div class="sh-line"></div>
+      </div>
+
+      <article class="full-art">
+        <div class="fa-banner">
+          <div class="fa-banner-rings"></div>
+          <span style="position:relative;z-index:1">⚾</span>
+          <div class="fa-overlay"></div>
+        </div>
+        <div class="fa-body">
+          <div class="fa-badges">
+            <span class="badge badge-fire">Empresa de guantes</span>
+            <span class="badge badge-edu">📚 Contenido Educativo</span>
+          </div>
+          <h1 class="fa-h1">Guante de Béisbol: Guía Completa de Cueros, Tallas y Posiciones</h1>
+          <div class="fa-byline">
+            <span>Por Equipo Editorial Empresa Provinet Rebotes</span><span>·</span>
+            <span>Mayo 2025</span><span>·</span><span>12 min</span><span>·</span>
+            <span>🏷 Empresa de guantes · Béisbol</span>
+          </div>
+          <div class="fa-text">
+            <p>En <strong>Empresa Provinet Rebotes</strong>, la empresa de guantes de béisbol es uno de los temas más consultados. El guante de béisbol es uno de los equipos deportivos más especializados que existen: cada posición tiene un diseño distinto, cada cuero tiene un comportamiento diferente y cada jugador necesita un tamaño específico. Entender estos detalles permite elegir el guante correcto para cada jugador.</p>
+            <div class="callout">
+              <div class="callout-lbl">ℹ Nota Educativa</div>
+              <p>Este artículo de Empresa Provinet Rebotes tiene fines exclusivamente informativos y educativos. No vendemos guantes ni equipamiento deportivo de ningún tipo. Para recomendaciones personalizadas consulta a un entrenador certificado.</p>
+            </div>
+            <h2>Tipos de Cuero y Sus Diferencias</h2>
+            <p>El material del guante es el factor más importante en la calidad y durabilidad. En la empresa de guantes de Provinet, los materiales más comunes son el <strong>cuero de piel de vaca</strong> (el más común, buen equilibrio de durabilidad y precio), el <strong>cuero de búfalo</strong> (más suave desde el principio pero menos duradero), el <strong>cuero de piel de cerdo</strong> (interior de los dedos, añade suavidad) y los <strong>materiales sintéticos</strong> (para niños, más ligeros y económicos, pero menos duraderos).</p>
+            <h3>Guantes por posición</h3>
+            <table class="info-table">
+              <thead><tr><th>Posición</th><th>Tamaño</th><th>Tipo de web</th><th>Característica</th></tr></thead>
+              <tbody>
+                <tr><td>Jardinero central/lateral</td><td>12"–12,75"</td><td>Abierta (H-web)</td><td>Mayor apertura para atrapar vuelos</td></tr>
+                <tr><td>Tercera base</td><td>11,5"–12"</td><td>Cerrada (I-web)</td><td>Bolsillo profundo para líneas rasantes</td></tr>
+                <tr><td>Campo corto / Segunda</td><td>11"–11,75"</td><td>Abierta (2-piece)</td><td>Transición rápida bola-mano</td></tr>
+                <tr><td>Primera base</td><td>12"–13"</td><td>Sin dedos separados</td><td>Forma de cuchara para coger tiros</td></tr>
+                <tr><td>Receptor (catcher)</td><td>32"–34" (otra escala)</td><td>Sin fingers</td><td>Acolchado extra para impacto de lanzadores</td></tr>
+                <tr><td>Lanzador (pitcher)</td><td>11,5"–12"</td><td>Cerrada (opaque)</td><td>Oculta el agarre de la bola al bateador</td></tr>
+              </tbody>
+            </table>
+            <h2>Cómo Acondicionar (Romper) un Guante Nuevo</h2>
+            <p>Un guante nuevo de cuero genuino es rígido y necesita un proceso de acondicionamiento (break-in) para moldearse correctamente. Los métodos incluyen aplicar aceite de guante o vaselina, doblar el guante con una pelota dentro y atarlo con cuerda, y usarlo en sesiones de práctica progresivas. El proceso puede tardar de 2 semanas a 2 meses según el cuero.</p>
+            <div class="info-box">
+              <div class="info-box-lbl">💡 Dato de Provinet Rebotes</div>
+              <p>Los guantes de cuero de primera calidad se vuelven mejores con el uso: el cuero se moldea perfectamente a la mano del jugador. Por eso muchos jugadores profesionales mantienen el mismo guante durante años, aunque puedan permitirse uno nuevo.</p>
+            </div>
+            <h2>Cómo Limpiar y Conservar el Guante</h2>
+            <p>Para limpiar un guante de béisbol, usa un paño húmedo para retirar el polvo y la suciedad superficial. Aplica aceite de guante o condicionador de cuero con un trapo suave, frotando en movimientos circulares. Deja secar a temperatura ambiente, nunca al sol ni cerca de fuentes de calor. Guarda el guante con una pelota dentro para mantener el bolsillo formado.</p>
+            <div class="warn-box">
+              <div class="warn-lbl">⚠ Errores frecuentes</div>
+              <p>No pongas el guante en el microondas ni en el horno para acelerarlo: el calor seco reseca el cuero y lo agrieta. Tampoco uses aceite de cocina ni WD-40: pueden manchar el cuero y atraer polvo. En la empresa de guantes de Provinet Rebotes siempre recomendamos usar productos específicos para cuero deportivo.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MORE ARTICLES -->
+      <div class="sh">
+        <div class="sh-eyebrow">Continúa leyendo en Provinet Rebotes</div>
+        <div class="sh-title">Más Artículos</div>
+        <div class="sh-line"></div>
+      </div>
+      <div class="alist">
+        <div class="aitem">
+          <div class="anum">06</div>
+          <div>
+            <div class="ai-cat cat-coche">Empresa de coches · Seguridad</div>
+            <div class="ai-title">Certificaciones de seguridad en juguetes: EN 71, ASTM y CE explicadas</div>
+            <p class="ai-desc">En la empresa de coches de juguete y artículos infantiles de Provinet Rebotes, la certificación EN 71 (Europa) tiene 14 partes que cubren propiedades mecánicas, inflamabilidad y propiedades químicas. ASTM F963 es el equivalente americano. El marcado CE indica conformidad con las directivas europeas. Aprende qué buscar en la etiqueta para garantizar la seguridad de cada juguete.</p>
+            <div class="ai-meta"><span>10 min</span><span>·</span><span>Abr 2025</span></div>
+          </div>
+        </div>
+        <div class="aitem">
+          <div class="anum">07</div>
+          <div>
+            <div class="ai-cat cat-balon">Empresa de balones · Mantenimiento</div>
+            <div class="ai-title">Cómo inflar un balón correctamente: presiones y manómetro</div>
+            <p class="ai-desc">En la empresa de balones de Provinet Rebotes, la presión incorrecta arruina el balón y el juego. Fútbol: 0,6–1,1 bar. Baloncesto: 7–9 PSI. Voleibol: 0,300–0,325 kg/cm². Un balón subinflado no bota correctamente y se deforma; sobreinflado puede explotar la costura. Aprende a usar un manómetro digital y por qué la temperatura ambiente afecta la presión interna.</p>
+            <div class="ai-meta"><span>7 min</span><span>·</span><span>Mar 2025</span></div>
+          </div>
+        </div>
+        <div class="aitem">
+          <div class="anum">08</div>
+          <div>
+            <div class="ai-cat cat-bici">Empresa de bicicletas · Seguridad</div>
+            <div class="ai-title">Casco infantil para bicicleta: tallas, ajuste y normas de seguridad</div>
+            <p class="ai-desc">En la empresa de bicicletas de Provinet Rebotes, el casco es el equipo más importante para los niños ciclistas. Debe cumplir EN 1078 (Europa) o CPSC 16 CFR Part 1203 (EE.UU.). El ajuste correcto: dos dedos sobre las cejas, correas en Y bajo las orejas y hebilla bajo la barbilla con un dedo de espacio. Aprende cuándo reemplazar el casco y por qué no se debe compartir.</p>
+            <div class="ai-meta"><span>9 min</span><span>·</span><span>Feb 2025</span></div>
+          </div>
+        </div>
+        <div class="aitem">
+          <div class="anum">09</div>
+          <div>
+            <div class="ai-cat cat-juguete">Juguetes · Historia</div>
+            <div class="ai-title">Historia del juguete: del trompo de arcilla al juguete electrónico</div>
+            <p class="ai-desc">Los juguetes más antiguos conocidos tienen más de 4.000 años: trompos de arcilla en Mesopotamia, muñecas articuladas de marfil en Egipto. El plástico revolucionó la industria del juguete a partir de 1940 con el ABS. El primer videojuego comercial llegó en 1972. Provinet Rebotes cuenta la historia de cómo el juego ha evolucionado junto a los materiales disponibles en cada época.</p>
+            <div class="ai-meta"><span>13 min</span><span>·</span><span>Ene 2025</span></div>
+          </div>
+        </div>
+        <div class="aitem">
+          <div class="anum">10</div>
+          <div>
+            <div class="ai-cat cat-guante">Empresa de guantes · Materiales</div>
+            <div class="ai-title">Materiales técnicos en guantes deportivos: Kevlar, Nomex y cuero sintético</div>
+            <p class="ai-desc">En la empresa de guantes de Provinet Rebotes, los guantes de ciclismo usan palma de cuero de vaca con dorso de lycra. Los guantes de golf usan piel de cabrito (más fina y sensible). Los guantes de motocross usan Kevlar en los nudillos (resistencia a la abrasión) y insertos de silicona en la palma (agarre). Aprende cómo elegir el material adecuado según el deporte y la intensidad de uso.</p>
+            <div class="ai-meta"><span>11 min</span><span>·</span><span>Dic 2024</span></div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="ad ad-side">[ Espacio publicitario — 300×250 ]</div>
+      <div class="widget">
+        <div class="w-head wh-fire">Categorías</div>
+        <div class="w-body">
+          <div class="cat-row"><span class="cat-lnk">🚲 Empresa de bicicletas</span><span class="cat-badge">4</span></div>
+          <div class="cat-row"><span class="cat-lnk">🚗 Empresa de coches</span><span class="cat-badge">4</span></div>
+          <div class="cat-row"><span class="cat-lnk">⚽ Empresa de balones</span><span class="cat-badge">5</span></div>
+          <div class="cat-row"><span class="cat-lnk">⚾ Empresa de guantes</span><span class="cat-badge">4</span></div>
+          <div class="cat-row"><span class="cat-lnk">🎮 Más juguetes</span><span class="cat-badge">3</span></div>
+          <div class="cat-row"><span class="cat-lnk">🛡️ Seguridad infantil</span><span class="cat-badge">4</span></div>
+          <div class="cat-row"><span class="cat-lnk">🔧 Mantenimiento</span><span class="cat-badge">3</span></div>
+        </div>
+      </div>
+      <div class="tip-w">
+        <div class="tip-lbl">💡 Dato de Provinet Rebotes</div>
+        <p class="tip-txt">"Un guante de béisbol de cuero genuino de alta calidad se vuelve mejor con el uso: el cuero se amolda perfectamente a la mano en un proceso que puede tardar meses pero que dura décadas."</p>
+        <div class="tip-by">— Equipo Editorial Empresa Provinet Rebotes · Mayo 2025</div>
+      </div>
+      <div class="ad ad-side">[ Espacio publicitario — 300×250 ]</div>
+      <div class="widget">
+        <div class="w-head wh-dark">Etiquetas</div>
+        <div class="w-body">
+          <div class="tag-cloud">
+            <span class="tag">bicicleta 16"</span>
+            <span class="tag">coche ABS plástico</span>
+            <span class="tag">balón talla 5</span>
+            <span class="tag">guante béisbol</span>
+            <span class="tag">cuero piel vaca</span>
+            <span class="tag">coche eléctrico 12V</span>
+            <span class="tag">die-cast zamak</span>
+            <span class="tag">balón PU</span>
+            <span class="tag">guante portero látex</span>
+            <span class="tag">ruedines bici</span>
+            <span class="tag">dron LiPo</span>
+            <span class="tag">cuerda saltar PVC</span>
+            <span class="tag">patineta foam</span>
+            <span class="tag">EN 71 juguetes</span>
+            <span class="tag">pelota béisbol</span>
+            <span class="tag">balón americano</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- KNOW STRIP -->
+<section class="know">
+  <div class="container">
+    <div class="know-grid">
+      <div class="kstat"><div class="knum">17+</div><div class="klbl">Artículos documentados</div><div class="kdesc">Bicicletas, coches, balones, guantes y más</div></div>
+      <div class="kstat"><div class="knum">7</div><div class="klbl">Categorías temáticas</div><div class="kdesc">Materiales, seguridad, tallas e historia</div></div>
+      <div class="kstat"><div class="knum">0</div><div class="klbl">Marcas mencionadas</div><div class="kdesc">Contenido objetivo de Provinet sin patrocinios</div></div>
+      <div class="kstat"><div class="knum">100%</div><div class="klbl">Contenido gratuito</div><div class="kdesc">Sin registro, sin suscripción, acceso libre</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="a-label">Sobre Empresa Provinet Rebotes</div>
+        <h2 class="a-h2">EL JUEGO<br>TAMBIÉN<br>SE <em>APRENDE</em></h2>
+        <p class="a-p"><strong>Empresa Provinet Rebotes</strong> es un blog de divulgación educativa sobre juguetes, artículos deportivos y equipamiento para niños y adultos. Desde la empresa de bicicletas hasta la empresa de guantes, coches de juguete y balones, cubrimos cada artículo con rigor técnico y lenguaje claro para padres, deportistas y aficionados.</p>
+        <p class="a-p">No vendemos juguetes ni artículos deportivos de ningún tipo. Todo el contenido de <strong>Provinet Rebotes</strong> tiene propósito exclusivamente educativo e informativo, sin afiliación ni patrocinio de ningún fabricante o distribuidor.</p>
+        <div class="disc-box">
+          <p>⚠ <strong>Aviso:</strong> El contenido de Empresa Provinet Rebotes es informativo y educativo. No constituye asesoramiento de compra ni recomendación comercial. Esta página no contiene enlaces ocultos, rastreadores de afiliados ni redirecciones a tiendas de ningún tipo.</p>
+        </div>
+      </div>
+      <div class="values">
+        <div class="val"><div class="val-ico vi1">📚</div><div><div class="val-t">Rigor Técnico</div><div class="val-d">Cada artículo de Provinet Rebotes explica materiales y normas de seguridad con terminología técnica verificada y fuentes especializadas.</div></div></div>
+        <div class="val"><div class="val-ico vi2">🚫</div><div><div class="val-t">Sin Marcas ni Links Ocultos</div><div class="val-d">No hay ningún enlace externo oculto ni rastreador de afiliados en Empresa Provinet Rebotes. Código limpio y transparente.</div></div></div>
+        <div class="val"><div class="val-ico vi3">👨‍👩‍👧</div><div><div class="val-t">Para Toda la Familia</div><div class="val-d">Provinet Rebotes está pensado para que padres, entrenadores y niños entiendan cada artículo deportivo y de juego que usan a diario.</div></div></div>
+        <div class="val"><div class="val-ico vi4">🔒</div><div><div class="val-t">Privacidad Respetada</div><div class="val-d">Provinet cumple el RGPD. Solo Google Fonts y AdSense (con tu consentimiento) están presentes en este sitio.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="f-brand">Empresa Provinet <span>Rebotes</span></div>
+        <p class="f-desc">Blog educativo sobre bicicletas, coches de juguete, balones, guantes y artículos deportivos. Contenido 100% informativo de Provinet. Sin ventas ni links ocultos.</p>
+      </div>
+      <div>
+        <div class="f-col-title">Artículos</div>
+        <div class="f-links">
+          <span>Empresa de bicicletas</span>
+          <span>Empresa de coches</span>
+          <span>Empresa de balones</span>
+          <span>Empresa de guantes</span>
+          <span>Más juguetes</span>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Blog Provinet</div>
+        <div class="f-links">
+          <span>Artículos recientes</span>
+          <span>Lo más leído</span>
+          <span>Glosario deportivo</span>
+          <span>Guía de materiales</span>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Legal</div>
+        <div class="f-links">
+          <span onclick="openPriv()" style="cursor:pointer">Política de Privacidad</span>
+          <span onclick="openTerm()" style="cursor:pointer">Términos de Uso</span>
+          <span>Política de Cookies</span>
+          <span>Aviso Legal</span>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2025 Empresa Provinet Rebotes — Blog Educativo de Juguetes y Artículos Deportivos. Todos los derechos reservados.</span>
+      <div class="f-legal">
+        <span onclick="openPriv()">Privacidad</span>
+        <span onclick="openTerm()">Términos</span>
+        <span>Cookies</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="m-ov" id="mPriv" onclick="if(event.target===this)closePriv()">
+  <div class="modal">
+    <div class="modal-hd"><div class="modal-hd-t">Política de Privacidad</div><button class="modal-x" onclick="closePriv()">✕</button></div>
+    <div class="modal-bd">
+      <p><strong>Última actualización:</strong> 1 de enero de 2025</p>
+      <h3>1. Identificación del Responsable</h3>
+      <p>Empresa Provinet Rebotes es un blog educativo sobre juguetes y artículos deportivos. Contacto: <strong>empresaprovinetrebotes@gmail.com</strong></p>
+      <h3>2. Finalidad del Blog</h3>
+      <p>Este sitio publica exclusivamente contenido educativo. No comercializa productos ni servicios. No contiene enlaces de afiliados ni rastreadores comerciales.</p>
+      <h3>3. Recursos Externos</h3>
+      <p>Solo se cargan recursos de <strong>Google Fonts</strong> y puede mostrarse publicidad de <strong>Google AdSense</strong> si el usuario acepta las cookies. No hay ningún otro recurso externo.</p>
+      <h3>4. Datos que Recopilamos</h3>
+      <ul>
+        <li><strong>Cookies analíticas:</strong> Google Analytics con IP anonimizada, solo si se aceptan.</li>
+        <li><strong>Cookies publicitarias:</strong> Google AdSense, solo si el usuario acepta.</li>
+        <li>No recopilamos datos de formularios ni registros de usuario.</li>
+      </ul>
+      <h3>5. Google AdSense</h3>
+      <p>Puedes deshabilitar la publicidad personalizada en <strong>www.aboutads.info</strong>. Política de Google: <strong>policies.google.com/privacy</strong>.</p>
+      <h3>6. Derechos del Usuario</h3>
+      <p>Contacto: <strong>empresaprovinetrebotes@gmail.com</strong></p>
+      <h3>7. Cambios</h3>
+      <p>Los cambios se comunicarán en esta misma página con la fecha de actualización.</p>
+    </div>
+  </div>
+</div>
+
+<div class="m-ov" id="mTerm" onclick="if(event.target===this)closeTerm()">
+  <div class="modal">
+    <div class="modal-hd"><div class="modal-hd-t">Términos de Uso</div><button class="modal-x" onclick="closeTerm()">✕</button></div>
+    <div class="modal-bd">
+      <p><strong>Última actualización:</strong> 1 de enero de 2025</p>
+      <h3>1. Naturaleza del Sitio</h3>
+      <p>Empresa Provinet Rebotes es un blog educativo. Todo el contenido es informativo y no constituye asesoramiento de compra. No contiene enlaces ocultos ni afiliaciones comerciales.</p>
+      <h3>2. Limitación de Responsabilidad</h3>
+      <p>La información tiene fines educativos. Para decisiones de compra o uso seguro de artículos deportivos, consulta a un especialista o entrenador certificado.</p>
+      <h3>3. Propiedad Intelectual</h3>
+      <p>Todos los textos son propiedad de Empresa Provinet Rebotes. Se prohíbe la reproducción sin autorización.</p>
+      <h3>4. Publicidad</h3>
+      <p>Este blog puede contener espacios de Google AdSense solo con consentimiento del usuario.</p>
+      <h3>5. Sin Marcas ni Afiliaciones</h3>
+      <p>Provinet Rebotes no menciona marcas comerciales ni tiene acuerdos de afiliación.</p>
+      <h3>6. Ley Aplicable</h3>
+      <p>Estos términos se rigen por la legislación española.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE BANNER -->
+<div class="cookie" id="cookieBar">
+  <div class="cookie-txt">
+    🍪 <strong>Empresa Provinet Rebotes</strong> usa cookies de análisis y publicidad (Google AdSense) solo con tu consentimiento. Sin otros rastreadores. Más info: <span class="priv-lnk" onclick="openPriv()">Política de Privacidad</span>.
+  </div>
+  <div class="c-btns">
+    <button class="btn-cr" onclick="rejectC()">Solo necesarias</button>
+    <button class="btn-ca" onclick="acceptC()">Aceptar todo</button>
+  </div>
+</div>
+
+<script>
+  function acceptC(){document.getElementById('cookieBar').style.display='none';localStorage.setItem('epr_c','all')}
+  function rejectC(){document.getElementById('cookieBar').style.display='none';localStorage.setItem('epr_c','ess')}
+  if(localStorage.getItem('epr_c'))document.getElementById('cookieBar').style.display='none';
+  function openPriv(){document.getElementById('mPriv').classList.add('open');document.body.style.overflow='hidden'}
+  function closePriv(){document.getElementById('mPriv').classList.remove('open');document.body.style.overflow=''}
+  function openTerm(){document.getElementById('mTerm').classList.add('open');document.body.style.overflow='hidden'}
+  function closeTerm(){document.getElementById('mTerm').classList.remove('open');document.body.style.overflow=''}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePriv();closeTerm()}});
+  function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+  document.querySelectorAll('.cf-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.cf-btn').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      const cat=btn.dataset.cat;
+      document.querySelectorAll('.pcard').forEach(card=>{
+        card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
+      });
+    });
+  });
+  const secs=['inicio','catalogo','guias','nosotros'];
+  const navSpans=document.querySelectorAll('nav span');
+  window.addEventListener('scroll',()=>{
+    let cur='inicio';
+    secs.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-90)cur=id});
+    navSpans.forEach((s,i)=>s.classList.toggle('active',i===secs.indexOf(cur)));
+  });
+</script>
+</body>
+</html>
